@@ -26,11 +26,9 @@ class _LoginScreenState extends State<LoginScreen> {
   void initState() {
     super.initState();
     _loginBloc = LoginBloc(loginRepository: getIt());
-    setState(() {
-      _emailController.text = 'eve.holt@reqres.in';
-      _passwordController.text = 'cityslicka';
-    });
 
+    _emailController.text = 'eve.holt@reqres.in';
+    _passwordController.text = 'cityslicka';
   }
 
   @override

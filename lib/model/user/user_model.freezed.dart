@@ -20,9 +20,7 @@ UserModel _$UserModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UserModel {
-  @JsonKey(name: 'token')
   String get token => throw _privateConstructorUsedError;
-  @JsonKey(name: 'error')
   String get error => throw _privateConstructorUsedError;
 
   /// Serializes this UserModel to a JSON map.
@@ -40,9 +38,7 @@ abstract class $UserModelCopyWith<$Res> {
   factory $UserModelCopyWith(UserModel value, $Res Function(UserModel) then) =
       _$UserModelCopyWithImpl<$Res, UserModel>;
   @useResult
-  $Res call(
-      {@JsonKey(name: 'token') String token,
-      @JsonKey(name: 'error') String error});
+  $Res call({String token, String error});
 }
 
 /// @nodoc
@@ -84,9 +80,7 @@ abstract class _$$UserModelImplCopyWith<$Res>
       __$$UserModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(name: 'token') String token,
-      @JsonKey(name: 'error') String error});
+  $Res call({String token, String error});
 }
 
 /// @nodoc
@@ -121,18 +115,16 @@ class __$$UserModelImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$UserModelImpl implements _UserModel {
-  _$UserModelImpl(
-      {@JsonKey(name: 'token') this.token = '',
-      @JsonKey(name: 'error') this.error = ''});
+  _$UserModelImpl({this.token = '', this.error = ''});
 
   factory _$UserModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserModelImplFromJson(json);
 
   @override
-  @JsonKey(name: 'token')
+  @JsonKey()
   final String token;
   @override
-  @JsonKey(name: 'error')
+  @JsonKey()
   final String error;
 
   @override
@@ -170,18 +162,15 @@ class _$UserModelImpl implements _UserModel {
 }
 
 abstract class _UserModel implements UserModel {
-  factory _UserModel(
-      {@JsonKey(name: 'token') final String token,
-      @JsonKey(name: 'error') final String error}) = _$UserModelImpl;
+  factory _UserModel({final String token, final String error}) =
+      _$UserModelImpl;
 
   factory _UserModel.fromJson(Map<String, dynamic> json) =
       _$UserModelImpl.fromJson;
 
   @override
-  @JsonKey(name: 'token')
   String get token;
   @override
-  @JsonKey(name: 'error')
   String get error;
 
   /// Create a copy of UserModel
