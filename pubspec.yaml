@@ -30,7 +30,6 @@ dependencies:
   bloc: ^9.0.0
   flutter_bloc: ^9.0.0
   get_it: ^8.0.3
-  freezed_annotation: ^2.4.4
   json_annotation: ^4.9.0
   fluttertoast: ^8.2.11
   cached_network_image: ^3.4.1
@@ -39,6 +38,7 @@ dependencies:
   flutter_secure_storage: ^4.2.1
   google_fonts: ^6.2.1
   freezed: ^2.5.8
+  freezed_annotation: ^2.4.4
 
 dev_dependencies:
   flutter_test:
