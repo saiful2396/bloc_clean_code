@@ -8,17 +8,19 @@ class LoadingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Platform.isAndroid
-            ? CircularProgressIndicator()
-            : CupertinoActivityIndicator(),
-        SizedBox(
-          width: 5,
-        ),
-        Text("Loading..."),
-      ],
+    return Center(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Platform.isAndroid
+              ? CircularProgressIndicator()
+              : CupertinoActivityIndicator(),
+          SizedBox(
+            width: 5,
+          ),
+          Text("Loading..."),
+        ],
+      ),
     );
   }
 }

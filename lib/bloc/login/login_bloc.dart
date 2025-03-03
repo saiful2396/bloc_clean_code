@@ -5,7 +5,6 @@ import 'package:bloc_clean_code/utils/api_status.dart';
 import 'package:equatable/equatable.dart';
 
 part 'login_event.dart';
-
 part 'login_state.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginStates> {

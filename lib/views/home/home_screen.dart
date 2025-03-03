@@ -7,6 +7,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../config/components/loading_widget.dart';
 import '../../utils/api_status.dart';
 import '../../utils/flushbar_helper.dart';
 
@@ -60,16 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
             builder: (BuildContext context, state) {
               switch (state.movieList.status) {
                 case Status.loading:
-                  return Center(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        CircularProgressIndicator(),
-                        SizedBox(width: 5),
-                        Text('Loading...')
-                      ],
-                    ),
-                  );
+                  return LoadingWidget();
                 case Status.error:
                   if (state.movieList.message!.contains("No Internet Connections: null")) {
                     return InternetExceptionWidget(onPress: () {

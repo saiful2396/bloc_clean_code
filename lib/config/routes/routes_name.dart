@@ -36,9 +36,9 @@ class Routes {
 // Custom PageRoute to disable swipe-to-back gesture
 class NoSwipeBackRoute<T> extends MaterialPageRoute<T> {
   NoSwipeBackRoute({
-    required WidgetBuilder builder,
-    RouteSettings? settings,
-  }) : super(builder: builder, settings: settings);
+    required super.builder,
+    super.settings,
+  });
 
   @override
   bool get popGestureEnabled => false; // Disable swipe-to-back gesture
