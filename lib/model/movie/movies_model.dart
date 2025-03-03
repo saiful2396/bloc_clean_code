@@ -4,10 +4,10 @@ part 'movies_model.g.dart';
 @freezed
 class MoviesModel with _$MoviesModel {
   factory MoviesModel({
-    @Default('') String total,
+    @Default(0) int total,
     @Default(0) int page,
     @Default(0) int pages,
-    @Default([]) List<TvShows> tvShow,
+    @Default([]) List<TvShows> tv_shows,
   }) = _MoviesModel;
 
   factory MoviesModel.fromJson(Map<String, dynamic> json) =>
@@ -20,12 +20,12 @@ class TvShows with _$TvShows {
     @Default(0) int id,
     @Default('') String name,
     @Default('') String permalink,
-    @Default('') String startDate,
-    @Default('') String endDate,
+    @Default('') String start_date,
+    @Default('') String end_date,
     @Default('') String country,
     @Default('') String network,
     @Default('') String status,
-    @Default('') String imageThumbnailPath,
+    @Default('') String image_thumbnail_path,
   }) = _TvShows;
 
   factory TvShows.fromJson(Map<String, dynamic> json) =>

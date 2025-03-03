@@ -2,6 +2,8 @@ import 'package:bloc_clean_code/config/routes/routes.dart';
 import 'package:bloc_clean_code/config/routes/routes_name.dart';
 import 'package:bloc_clean_code/repository/auth/login_http_repository.dart';
 import 'package:bloc_clean_code/repository/auth/login_repository.dart';
+import 'package:bloc_clean_code/repository/movie/movie_http_repository.dart';
+import 'package:bloc_clean_code/repository/movie/movie_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
@@ -57,4 +59,5 @@ class MyApp extends StatelessWidget {
 
 void serviceLocator(){
   getIt.registerLazySingleton<LoginRepository>(()=> LoginHttpRepository());
+  getIt.registerLazySingleton<MovieRepository>(()=> MovieHttpRepository());
 }

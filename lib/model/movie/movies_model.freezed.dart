@@ -20,11 +20,10 @@ MoviesModel _$MoviesModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$MoviesModel {
-  String get total => throw _privateConstructorUsedError;
+  int get total => throw _privateConstructorUsedError;
   int get page => throw _privateConstructorUsedError;
   int get pages => throw _privateConstructorUsedError;
-  @JsonKey(name: 'tv_shows')
-  List<TvShows> get tvShow => throw _privateConstructorUsedError;
+  List<TvShows> get tv_shows => throw _privateConstructorUsedError;
 
   /// Serializes this MoviesModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -42,11 +41,7 @@ abstract class $MoviesModelCopyWith<$Res> {
           MoviesModel value, $Res Function(MoviesModel) then) =
       _$MoviesModelCopyWithImpl<$Res, MoviesModel>;
   @useResult
-  $Res call(
-      {String total,
-      int page,
-      int pages,
-      @JsonKey(name: 'tv_shows') List<TvShows> tvShow});
+  $Res call({int total, int page, int pages, List<TvShows> tv_shows});
 }
 
 /// @nodoc
@@ -67,13 +62,13 @@ class _$MoviesModelCopyWithImpl<$Res, $Val extends MoviesModel>
     Object? total = null,
     Object? page = null,
     Object? pages = null,
-    Object? tvShow = null,
+    Object? tv_shows = null,
   }) {
     return _then(_value.copyWith(
       total: null == total
           ? _value.total
           : total // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       page: null == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
@@ -82,9 +77,9 @@ class _$MoviesModelCopyWithImpl<$Res, $Val extends MoviesModel>
           ? _value.pages
           : pages // ignore: cast_nullable_to_non_nullable
               as int,
-      tvShow: null == tvShow
-          ? _value.tvShow
-          : tvShow // ignore: cast_nullable_to_non_nullable
+      tv_shows: null == tv_shows
+          ? _value.tv_shows
+          : tv_shows // ignore: cast_nullable_to_non_nullable
               as List<TvShows>,
     ) as $Val);
   }
@@ -98,11 +93,7 @@ abstract class _$$MoviesModelImplCopyWith<$Res>
       __$$MoviesModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String total,
-      int page,
-      int pages,
-      @JsonKey(name: 'tv_shows') List<TvShows> tvShow});
+  $Res call({int total, int page, int pages, List<TvShows> tv_shows});
 }
 
 /// @nodoc
@@ -121,13 +112,13 @@ class __$$MoviesModelImplCopyWithImpl<$Res>
     Object? total = null,
     Object? page = null,
     Object? pages = null,
-    Object? tvShow = null,
+    Object? tv_shows = null,
   }) {
     return _then(_$MoviesModelImpl(
       total: null == total
           ? _value.total
           : total // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       page: null == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
@@ -136,9 +127,9 @@ class __$$MoviesModelImplCopyWithImpl<$Res>
           ? _value.pages
           : pages // ignore: cast_nullable_to_non_nullable
               as int,
-      tvShow: null == tvShow
-          ? _value._tvShow
-          : tvShow // ignore: cast_nullable_to_non_nullable
+      tv_shows: null == tv_shows
+          ? _value._tv_shows
+          : tv_shows // ignore: cast_nullable_to_non_nullable
               as List<TvShows>,
     ));
   }
@@ -148,36 +139,36 @@ class __$$MoviesModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$MoviesModelImpl implements _MoviesModel {
   _$MoviesModelImpl(
-      {this.total = '',
+      {this.total = 0,
       this.page = 0,
       this.pages = 0,
-      @JsonKey(name: 'tv_shows') final List<TvShows> tvShow = const []})
-      : _tvShow = tvShow;
+      final List<TvShows> tv_shows = const []})
+      : _tv_shows = tv_shows;
 
   factory _$MoviesModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$MoviesModelImplFromJson(json);
 
   @override
   @JsonKey()
-  final String total;
+  final int total;
   @override
   @JsonKey()
   final int page;
   @override
   @JsonKey()
   final int pages;
-  final List<TvShows> _tvShow;
+  final List<TvShows> _tv_shows;
   @override
-  @JsonKey(name: 'tv_shows')
-  List<TvShows> get tvShow {
-    if (_tvShow is EqualUnmodifiableListView) return _tvShow;
+  @JsonKey()
+  List<TvShows> get tv_shows {
+    if (_tv_shows is EqualUnmodifiableListView) return _tv_shows;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_tvShow);
+    return EqualUnmodifiableListView(_tv_shows);
   }
 
   @override
   String toString() {
-    return 'MoviesModel(total: $total, page: $page, pages: $pages, tvShow: $tvShow)';
+    return 'MoviesModel(total: $total, page: $page, pages: $pages, tv_shows: $tv_shows)';
   }
 
   @override
@@ -188,13 +179,13 @@ class _$MoviesModelImpl implements _MoviesModel {
             (identical(other.total, total) || other.total == total) &&
             (identical(other.page, page) || other.page == page) &&
             (identical(other.pages, pages) || other.pages == pages) &&
-            const DeepCollectionEquality().equals(other._tvShow, _tvShow));
+            const DeepCollectionEquality().equals(other._tv_shows, _tv_shows));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, total, page, pages,
-      const DeepCollectionEquality().hash(_tvShow));
+      const DeepCollectionEquality().hash(_tv_shows));
 
   /// Create a copy of MoviesModel
   /// with the given fields replaced by the non-null parameter values.
@@ -214,24 +205,22 @@ class _$MoviesModelImpl implements _MoviesModel {
 
 abstract class _MoviesModel implements MoviesModel {
   factory _MoviesModel(
-          {final String total,
-          final int page,
-          final int pages,
-          @JsonKey(name: 'tv_shows') final List<TvShows> tvShow}) =
-      _$MoviesModelImpl;
+      {final int total,
+      final int page,
+      final int pages,
+      final List<TvShows> tv_shows}) = _$MoviesModelImpl;
 
   factory _MoviesModel.fromJson(Map<String, dynamic> json) =
       _$MoviesModelImpl.fromJson;
 
   @override
-  String get total;
+  int get total;
   @override
   int get page;
   @override
   int get pages;
   @override
-  @JsonKey(name: 'tv_shows')
-  List<TvShows> get tvShow;
+  List<TvShows> get tv_shows;
 
   /// Create a copy of MoviesModel
   /// with the given fields replaced by the non-null parameter values.
@@ -250,15 +239,12 @@ mixin _$TvShows {
   int get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get permalink => throw _privateConstructorUsedError;
-  @JsonKey(name: 'start_date')
-  String get startDate => throw _privateConstructorUsedError;
-  @JsonKey(name: 'end_date')
-  String get endDate => throw _privateConstructorUsedError;
+  String get start_date => throw _privateConstructorUsedError;
+  String get end_date => throw _privateConstructorUsedError;
   String get country => throw _privateConstructorUsedError;
   String get network => throw _privateConstructorUsedError;
   String get status => throw _privateConstructorUsedError;
-  @JsonKey(name: 'image_thumbnail_path')
-  String get imageThumbnailPath => throw _privateConstructorUsedError;
+  String get image_thumbnail_path => throw _privateConstructorUsedError;
 
   /// Serializes this TvShows to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -278,12 +264,12 @@ abstract class $TvShowsCopyWith<$Res> {
       {int id,
       String name,
       String permalink,
-      @JsonKey(name: 'start_date') String startDate,
-      @JsonKey(name: 'end_date') String endDate,
+      String start_date,
+      String end_date,
       String country,
       String network,
       String status,
-      @JsonKey(name: 'image_thumbnail_path') String imageThumbnailPath});
+      String image_thumbnail_path});
 }
 
 /// @nodoc
@@ -304,12 +290,12 @@ class _$TvShowsCopyWithImpl<$Res, $Val extends TvShows>
     Object? id = null,
     Object? name = null,
     Object? permalink = null,
-    Object? startDate = null,
-    Object? endDate = null,
+    Object? start_date = null,
+    Object? end_date = null,
     Object? country = null,
     Object? network = null,
     Object? status = null,
-    Object? imageThumbnailPath = null,
+    Object? image_thumbnail_path = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -324,13 +310,13 @@ class _$TvShowsCopyWithImpl<$Res, $Val extends TvShows>
           ? _value.permalink
           : permalink // ignore: cast_nullable_to_non_nullable
               as String,
-      startDate: null == startDate
-          ? _value.startDate
-          : startDate // ignore: cast_nullable_to_non_nullable
+      start_date: null == start_date
+          ? _value.start_date
+          : start_date // ignore: cast_nullable_to_non_nullable
               as String,
-      endDate: null == endDate
-          ? _value.endDate
-          : endDate // ignore: cast_nullable_to_non_nullable
+      end_date: null == end_date
+          ? _value.end_date
+          : end_date // ignore: cast_nullable_to_non_nullable
               as String,
       country: null == country
           ? _value.country
@@ -344,9 +330,9 @@ class _$TvShowsCopyWithImpl<$Res, $Val extends TvShows>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
-      imageThumbnailPath: null == imageThumbnailPath
-          ? _value.imageThumbnailPath
-          : imageThumbnailPath // ignore: cast_nullable_to_non_nullable
+      image_thumbnail_path: null == image_thumbnail_path
+          ? _value.image_thumbnail_path
+          : image_thumbnail_path // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -363,12 +349,12 @@ abstract class _$$TvShowsImplCopyWith<$Res> implements $TvShowsCopyWith<$Res> {
       {int id,
       String name,
       String permalink,
-      @JsonKey(name: 'start_date') String startDate,
-      @JsonKey(name: 'end_date') String endDate,
+      String start_date,
+      String end_date,
       String country,
       String network,
       String status,
-      @JsonKey(name: 'image_thumbnail_path') String imageThumbnailPath});
+      String image_thumbnail_path});
 }
 
 /// @nodoc
@@ -387,12 +373,12 @@ class __$$TvShowsImplCopyWithImpl<$Res>
     Object? id = null,
     Object? name = null,
     Object? permalink = null,
-    Object? startDate = null,
-    Object? endDate = null,
+    Object? start_date = null,
+    Object? end_date = null,
     Object? country = null,
     Object? network = null,
     Object? status = null,
-    Object? imageThumbnailPath = null,
+    Object? image_thumbnail_path = null,
   }) {
     return _then(_$TvShowsImpl(
       id: null == id
@@ -407,13 +393,13 @@ class __$$TvShowsImplCopyWithImpl<$Res>
           ? _value.permalink
           : permalink // ignore: cast_nullable_to_non_nullable
               as String,
-      startDate: null == startDate
-          ? _value.startDate
-          : startDate // ignore: cast_nullable_to_non_nullable
+      start_date: null == start_date
+          ? _value.start_date
+          : start_date // ignore: cast_nullable_to_non_nullable
               as String,
-      endDate: null == endDate
-          ? _value.endDate
-          : endDate // ignore: cast_nullable_to_non_nullable
+      end_date: null == end_date
+          ? _value.end_date
+          : end_date // ignore: cast_nullable_to_non_nullable
               as String,
       country: null == country
           ? _value.country
@@ -427,9 +413,9 @@ class __$$TvShowsImplCopyWithImpl<$Res>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
-      imageThumbnailPath: null == imageThumbnailPath
-          ? _value.imageThumbnailPath
-          : imageThumbnailPath // ignore: cast_nullable_to_non_nullable
+      image_thumbnail_path: null == image_thumbnail_path
+          ? _value.image_thumbnail_path
+          : image_thumbnail_path // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -442,12 +428,12 @@ class _$TvShowsImpl implements _TvShows {
       {this.id = 0,
       this.name = '',
       this.permalink = '',
-      @JsonKey(name: 'start_date') this.startDate = '',
-      @JsonKey(name: 'end_date') this.endDate = '',
+      this.start_date = '',
+      this.end_date = '',
       this.country = '',
       this.network = '',
       this.status = '',
-      @JsonKey(name: 'image_thumbnail_path') this.imageThumbnailPath = ''});
+      this.image_thumbnail_path = ''});
 
   factory _$TvShowsImpl.fromJson(Map<String, dynamic> json) =>
       _$$TvShowsImplFromJson(json);
@@ -462,11 +448,11 @@ class _$TvShowsImpl implements _TvShows {
   @JsonKey()
   final String permalink;
   @override
-  @JsonKey(name: 'start_date')
-  final String startDate;
+  @JsonKey()
+  final String start_date;
   @override
-  @JsonKey(name: 'end_date')
-  final String endDate;
+  @JsonKey()
+  final String end_date;
   @override
   @JsonKey()
   final String country;
@@ -477,12 +463,12 @@ class _$TvShowsImpl implements _TvShows {
   @JsonKey()
   final String status;
   @override
-  @JsonKey(name: 'image_thumbnail_path')
-  final String imageThumbnailPath;
+  @JsonKey()
+  final String image_thumbnail_path;
 
   @override
   String toString() {
-    return 'TvShows(id: $id, name: $name, permalink: $permalink, startDate: $startDate, endDate: $endDate, country: $country, network: $network, status: $status, imageThumbnailPath: $imageThumbnailPath)';
+    return 'TvShows(id: $id, name: $name, permalink: $permalink, start_date: $start_date, end_date: $end_date, country: $country, network: $network, status: $status, image_thumbnail_path: $image_thumbnail_path)';
   }
 
   @override
@@ -494,20 +480,21 @@ class _$TvShowsImpl implements _TvShows {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.permalink, permalink) ||
                 other.permalink == permalink) &&
-            (identical(other.startDate, startDate) ||
-                other.startDate == startDate) &&
-            (identical(other.endDate, endDate) || other.endDate == endDate) &&
+            (identical(other.start_date, start_date) ||
+                other.start_date == start_date) &&
+            (identical(other.end_date, end_date) ||
+                other.end_date == end_date) &&
             (identical(other.country, country) || other.country == country) &&
             (identical(other.network, network) || other.network == network) &&
             (identical(other.status, status) || other.status == status) &&
-            (identical(other.imageThumbnailPath, imageThumbnailPath) ||
-                other.imageThumbnailPath == imageThumbnailPath));
+            (identical(other.image_thumbnail_path, image_thumbnail_path) ||
+                other.image_thumbnail_path == image_thumbnail_path));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, permalink, startDate,
-      endDate, country, network, status, imageThumbnailPath);
+  int get hashCode => Object.hash(runtimeType, id, name, permalink, start_date,
+      end_date, country, network, status, image_thumbnail_path);
 
   /// Create a copy of TvShows
   /// with the given fields replaced by the non-null parameter values.
@@ -530,13 +517,12 @@ abstract class _TvShows implements TvShows {
       {final int id,
       final String name,
       final String permalink,
-      @JsonKey(name: 'start_date') final String startDate,
-      @JsonKey(name: 'end_date') final String endDate,
+      final String start_date,
+      final String end_date,
       final String country,
       final String network,
       final String status,
-      @JsonKey(name: 'image_thumbnail_path')
-      final String imageThumbnailPath}) = _$TvShowsImpl;
+      final String image_thumbnail_path}) = _$TvShowsImpl;
 
   factory _TvShows.fromJson(Map<String, dynamic> json) = _$TvShowsImpl.fromJson;
 
@@ -547,11 +533,9 @@ abstract class _TvShows implements TvShows {
   @override
   String get permalink;
   @override
-  @JsonKey(name: 'start_date')
-  String get startDate;
+  String get start_date;
   @override
-  @JsonKey(name: 'end_date')
-  String get endDate;
+  String get end_date;
   @override
   String get country;
   @override
@@ -559,8 +543,7 @@ abstract class _TvShows implements TvShows {
   @override
   String get status;
   @override
-  @JsonKey(name: 'image_thumbnail_path')
-  String get imageThumbnailPath;
+  String get image_thumbnail_path;
 
   /// Create a copy of TvShows
   /// with the given fields replaced by the non-null parameter values.

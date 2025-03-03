@@ -1,6 +1,14 @@
 part of 'movie_bloc.dart';
 
-@immutable
-sealed class MovieState {}
+class MovieState extends Equatable {
+  const MovieState({required this.movieList});
 
-final class MovieInitial extends MovieState {}
+  final APIResponse<MoviesModel> movieList;
+
+  MovieState copyWith({APIResponse<MoviesModel>? movieList}) {
+    return MovieState(movieList: movieList ?? this.movieList);
+  }
+
+  @override
+  List<Object?> get props => [movieList];
+}

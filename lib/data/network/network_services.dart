@@ -14,9 +14,12 @@ class NetworkServices extends BaseApiServices {
       final response =
           await http.get(Uri.parse(url)).timeout(Duration(minutes: 1));
 
+      if (kDebugMode) {
+        print('response body: ${response.body}');
+      }
+
       jsonResponse = returnResponse(response);
 
-      if (jsonResponse == 200) {}
     } on SocketException {
       throw NoInternetConnections();
     } on TimeoutException {
@@ -44,21 +47,25 @@ class NetworkServices extends BaseApiServices {
           .post(Uri.parse(url), body: data)
           .timeout(Duration(minutes: 1));
 
+      if (kDebugMode) {
+        print('Response Body: ${response.body}');
+      }
+
       jsonResponse = returnResponse(response);
     } on SocketException {
-      throw NoInternetConnections();
+      throw NoInternetConnections('Please check your internet connection and try again!');
     } on TimeoutException {
-      throw RequestTimeOut();
+      throw RequestTimeOut('');
     } on EmptyResponse {
-      throw EmptyResponse();
+      throw EmptyResponse('');
     } on UnAuthorizeExceptions {
-      throw UnAuthorizeExceptions();
+      throw UnAuthorizeExceptions('');
     } on F5Exceptions {
-      throw F5Exceptions();
+      throw F5Exceptions('');
     }
 
     if (kDebugMode) {
-      print('response: ${jsonResponse}');
+      print('response: $jsonResponse');
     }
     return jsonResponse;
   }

@@ -6,12 +6,12 @@ class AppExceptions implements Exception {
 
   @override
   String toString() {
-    return '$_message$_prefix'; // Return the formatted error message
+    return '$_prefix$_message'; // Return the formatted error message
   }
 }
 
 class NoInternetConnections extends AppExceptions{
-  NoInternetConnections([String? message]): super(message, 'Please check your internet connection and try again!');
+  NoInternetConnections([String? message]): super(message, 'No Internet Connections: ');
 }
 
 class UnAuthorizeExceptions extends AppExceptions{
