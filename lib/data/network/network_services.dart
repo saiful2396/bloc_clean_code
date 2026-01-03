@@ -11,15 +11,15 @@ class NetworkServices extends BaseApiServices {
   Future<dynamic> getApi(String url) async {
     dynamic jsonResponse;
     try {
-      final response =
-          await http.get(Uri.parse(url)).timeout(Duration(minutes: 1));
+      final response = await http
+          .get(Uri.parse(url))
+          .timeout(Duration(minutes: 1));
 
       if (kDebugMode) {
         print('response body: ${response.body}');
       }
 
       jsonResponse = returnResponse(response);
-
     } on SocketException {
       throw NoInternetConnections();
     } on TimeoutException {
@@ -44,7 +44,14 @@ class NetworkServices extends BaseApiServices {
     dynamic jsonResponse;
     try {
       final response = await http
-          .post(Uri.parse(url), body: data)
+          .post(
+            Uri.parse(url),
+            headers: {
+              'x-api-key': "reqres-free-v1",
+              'Content-Type': 'application/json',
+            },
+            body: jsonEncode(data),
+          )
           .timeout(Duration(minutes: 1));
 
       if (kDebugMode) {
@@ -53,7 +60,9 @@ class NetworkServices extends BaseApiServices {
 
       jsonResponse = returnResponse(response);
     } on SocketException {
-      throw NoInternetConnections('Please check your internet connection and try again!');
+      throw NoInternetConnections(
+        'Please check your internet connection and try again!',
+      );
     } on TimeoutException {
       throw RequestTimeOut('');
     } on EmptyResponse {
