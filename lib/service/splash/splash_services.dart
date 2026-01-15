@@ -6,40 +6,38 @@ import 'package:bloc_clean_code/config/routes/routes.dart';
 
 class SplashServices {
   void isLogin(BuildContext context) {
-
-    SessionController().getUserFromPreference().then((value){
-
-      if(SessionController().isLogin ?? false){
-        Timer(
-          Duration(seconds: 3),
+    SessionController()
+        .getUserFromPreference()
+        .then((value) {
+          if (SessionController().isLogin ?? false) {
+            Timer(
+              Duration(seconds: 3),
               () => Navigator.pushNamedAndRemoveUntil(
-            context,
-            RoutesName.homeScreen,
+                context,
+                RoutesName.homeScreen,
                 (route) => false,
-          ),
-        );
-      }else{
-        Timer(
-          Duration(seconds: 3),
+              ),
+            );
+          } else {
+            Timer(
+              Duration(seconds: 3),
               () => Navigator.pushNamedAndRemoveUntil(
-            context,
-            RoutesName.loginScreen,
+                context,
+                RoutesName.loginScreen,
                 (route) => false,
-          ),
-        );
-      }
-
-    }).onError((error, stackStrace){
-      Timer(
-        Duration(seconds: 3),
+              ),
+            );
+          }
+        })
+        .onError((error, stackStrace) {
+          Timer(
+            Duration(seconds: 3),
             () => Navigator.pushNamedAndRemoveUntil(
-          context,
-          RoutesName.loginScreen,
+              context,
+              RoutesName.loginScreen,
               (route) => false,
-        ),
-      );
-    });
-
-
+            ),
+          );
+        });
   }
 }

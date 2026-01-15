@@ -31,13 +31,12 @@ class SessionController {
     var userData = await localStorage.readValue('token');
     var isLogin = await localStorage.readValue('isLogin');
 
-    try{
-      if(userData != ''){
+    try {
+      if (userData != '') {
         SessionController().user = UserModel.fromJson(jsonDecode(userData));
       }
       SessionController().isLogin = isLogin == 'true' ? true : false;
-
-    }catch(e){
+    } catch (e) {
       debugPrint(e.toString());
     }
   }
